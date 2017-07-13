@@ -13,6 +13,8 @@ public class StockInfo {
 
     private static final Logger logger = LoggerFactory.getLogger(StockInfo.class);
 
+    private static final String USER_AGENT = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0";
+
     public StockInfo() {
 
     }
@@ -26,7 +28,7 @@ public class StockInfo {
      */
     public Stock getInfo(String id, String link) {
         try {
-            Document document = Jsoup.connect(link).get();
+            Document document = Jsoup.connect(link).userAgent(USER_AGENT).get();
 
             Stock stock = new Stock(id, link);
             stock.setName(document.select("#productTitle").text());
