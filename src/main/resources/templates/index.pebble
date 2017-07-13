@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+    <title>amzn stock monitoring</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>amzn stock monitoring</h1>
+    </div>
+
+    <form method="post" action="/add" enctype="application/x-www-form-urlencoded">
+        <div class="row">
+            <div class="col-xs-11">
+                <label for="link" class="sr-only">Link</label>
+                <input type="text" name="link" id="link" required="required" class="form-control" placeholder="Link...">
+            </div>
+            <div class="col-xs-1">
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    {% if not items is empty %}
+        <ul class="list-group">
+            {% for item in items %}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <a class="lead" href="{{ item.value }}" target="_blank">{{ item.value }}</a>
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <form method="post" action="/delete" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="id" value="{{ item.key }}">
+                                <button type="submit" class="btn btn-link">
+                                    <i class="glyphicon glyphicon-remove"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="alert alert-info lead">
+            No links found. Maybe add one?
+        </p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
