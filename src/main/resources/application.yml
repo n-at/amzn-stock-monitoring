@@ -1,0 +1,4 @@
+stock-monitoring:
+  mail-from: 'mail@example.com'
+  mail-subject: 'stock monitoring'
+  mail-to: 'mail@example.com'

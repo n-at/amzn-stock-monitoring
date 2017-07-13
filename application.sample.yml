@@ -1,0 +1,25 @@
+#Email settings
+spring.mail:
+  username: 'mail@example.com'
+  password: '******'
+  host: 'smtp.example.com'
+  port: '465'
+  protocol: 'smtps'
+
+#Email settings for gmail.com
+#spring.mail:
+#  username: 'username@gmail.com'
+#  password: '******'
+#  host: 'smtp.gmail.com'
+#  port: '587'
+#  properties:
+#    mail.smtp.starttls.enable = true
+
+###############################################################################
+
+#Application settings
+stock-monitoring:
+  #email message fields
+  mail-from: 'mail@example.com'
+  mail-subject: 'stock monitoring'
+  mail-to: 'mail@example.com'
