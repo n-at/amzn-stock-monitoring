@@ -7,9 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
-import ru.doublebyte.amznsm.services.ItemStorage;
-import ru.doublebyte.amznsm.services.MailMessageSender;
-import ru.doublebyte.amznsm.services.MailRenderer;
+import ru.doublebyte.amznsm.services.*;
 
 @Configuration
 public class MainConfiguration {
@@ -48,6 +46,16 @@ public class MainConfiguration {
     @Bean
     public MailMessageSender mailMessageSender() {
         return new MailMessageSender(javaMailSender, mailRenderer(), mailFrom, mailTo, mailSubject);
+    }
+
+    @Bean
+    public StockInfo stockInfo() {
+        return new StockInfo();
+    }
+
+    @Bean
+    public StockMonitor stockMonitor() {
+        return new StockMonitor(itemStorage(), stockInfo(), mailMessageSender());
     }
 
 }
