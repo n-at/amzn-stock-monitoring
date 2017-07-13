@@ -35,6 +35,7 @@ public class StockMonitor {
         List<Stock> stocks = itemStorage.getItems().entrySet().stream()
                 .map(it -> stockInfo.getInfo(it.getKey(), it.getValue()))
                 .filter(Objects::nonNull)
+                .sorted()
                 .collect(Collectors.toList());
 
         if (stocks.size() > 0) {

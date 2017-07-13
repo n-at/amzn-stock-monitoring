@@ -3,7 +3,7 @@ package ru.doublebyte.amznsm.structs;
 /**
  * Stock item
  */
-public class Stock {
+public class Stock implements Comparable<Stock> {
 
     private String id;
     private String link;
@@ -25,6 +25,15 @@ public class Stock {
     @Override
     public String toString() {
         return String.format("Stock{id='%s', link='%s', name='%s', price='%s', stock='%s'}", id, link, name, price, stock);
+    }
+
+    @Override
+    public int compareTo(Stock o) {
+        if (o == null) {
+            return -1;
+        } else {
+            return name.compareTo(o.getName());
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////
