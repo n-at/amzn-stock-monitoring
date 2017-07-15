@@ -35,11 +35,16 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a class="lead" href="{{ item.value }}" target="_blank">{{ item.value }}</a>
+                            <div class="lead">
+                                {{ item.name }}
+                            </div>
+                            <div>
+                                <a href="{{ item.link }}" target="_blank">{{ item.link }}</a>
+                            </div>
                         </div>
                         <div class="col-xs-2 text-right">
                             <form method="post" action="/delete" enctype="application/x-www-form-urlencoded">
-                                <input type="hidden" name="id" value="{{ item.key }}">
+                                <input type="hidden" name="id" value="{{ item.id }}">
                                 <button type="submit" class="btn btn-link">
                                     <i class="glyphicon glyphicon-remove"></i> Delete
                                 </button>
