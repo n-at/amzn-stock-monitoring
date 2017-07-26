@@ -28,7 +28,7 @@ public class StockMonitor {
 
     ///////////////////////////////////////////////////////////////////////////
 
-    @Scheduled(fixedDelayString = "#{${stock-monitoring.refresh-interval} * 60 * 1000}")
+    @Scheduled(cron = "${stock-monitoring.refresh-cron}")
     public void monitor() {
         logger.info("monitoring stocks...");
 

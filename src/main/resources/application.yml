@@ -2,4 +2,4 @@ stock-monitoring:
   mail-from: 'mail@example.com'
   mail-subject: 'stock monitoring'
   mail-to: 'mail@example.com'
-  refresh-interval: 480
+  refresh-cron: '0 0 8,21 * * *'
