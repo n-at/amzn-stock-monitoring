@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+
+    <title>Login</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>amzn stock monitoring</h1>
+    </div>
+
+    <form action="/login" method="post">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" id="password" name="password"
+                                   class="form-control" required placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm btn-block">
+                            Enter
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

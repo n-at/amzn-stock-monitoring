@@ -60,6 +60,12 @@
         </p>
     {% endif %}
 
+    <p class="text-right">
+        <a href="/logout">
+            <i class="glyphicon glyphicon-log-out"></i> Logout
+        </a>
+    </p>
+
 </div>
 
 </body>

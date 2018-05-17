@@ -25,3 +25,7 @@ stock-monitoring:
   mail-to: 'mail@example.com'
   #stocks refresh cron string
   refresh-cron: '0 0 8,21 * * *'
+
+#Access control
+access:
+  password: '******'

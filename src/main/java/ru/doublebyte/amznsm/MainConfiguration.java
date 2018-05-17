@@ -4,9 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+import org.springframework.web.context.WebApplicationContext;
 import ru.doublebyte.amznsm.services.*;
 
 @Configuration
@@ -56,6 +59,15 @@ public class MainConfiguration {
     @Bean
     public StockMonitor stockMonitor() {
         return new StockMonitor(itemStorage(), stockInfo(), mailMessageSender());
+    }
+
+    @Bean
+    @Scope(
+            value = WebApplicationContext.SCOPE_SESSION,
+            proxyMode = ScopedProxyMode.TARGET_CLASS
+    )
+    public SessionStorage sessionStorage() {
+        return new SessionStorage();
     }
 
 }
