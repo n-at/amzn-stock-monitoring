@@ -29,7 +29,7 @@
 
     <br>
 
-    {% if not items is empty %}
+    {% if items is not empty %}
         <ul class="list-group">
             {% for item in items %}
                 <li class="list-group-item">
