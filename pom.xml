@@ -17,7 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <pebble.version>3.0.10</pebble.version>
+        <pebble.version>3.1.5</pebble.version>
         <jsoup.version>1.14.3</jsoup.version>
         <bootstrap.version>3.4.1</bootstrap.version>
     </properties>
@@ -39,7 +39,7 @@
 
         <dependency>
             <groupId>io.pebbletemplates</groupId>
-            <artifactId>pebble-spring-boot-2-starter</artifactId>
+            <artifactId>pebble-spring-boot-starter</artifactId>
             <version>${pebble.version}</version>
         </dependency>
         <dependency>
